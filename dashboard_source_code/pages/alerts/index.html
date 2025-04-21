@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts & Notifications - Surveillance Dashboard</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SecureView</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../monitoring/index.html" class="nav-link">
+                        <i class="fas fa-video"></i>
+                        <span>Live Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../alerts/index.html" class="nav-link active">
+                        <i class="fas fa-bell"></i>
+                        <span>Alerts & Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../playback/index.html" class="nav-link">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Video Playback</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../reports/index.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports & Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../cameras/index.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Camera Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../users/index.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="toggle-sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Alerts & Notifications</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <span>JD</span>
+                        </div>
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Alert Filters -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Alert Filters</h2>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                            <div style="flex: 1; min-width: 200px;">
+                                <label for="alert-type" class="form-label">Alert Type</label>
+                                <select id="alert-type" class="form-control">
+                                    <option value="all">All Types</option>
+                                    <option value="motion">Motion Detection</option>
+                                    <option value="face">Face Recognition</option>
+                                    <option value="intrusion">Intrusion</option>
+                                    <option value="object">Unattended Object</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <label for="alert-location" class="form-label">Location</label>
+                                <select id="alert-location" class="form-control">
+                                    <option value="all">All Locations</option>
+                                    <option value="front-gate">Front Gate</option>
+                                    <option value="lobby">Lobby</option>
+                                    <option value="parking">Parking Lot</option>
+                                    <option value="warehouse">Warehouse</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <label for="alert-status" class="form-label">Status</label>
+                                <select id="alert-status" class="form-control">
+                                    <option value="all">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="acknowledged">Acknowledged</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <label for="alert-date" class="form-label">Date Range</label>
+                                <select id="alert-date" class="form-control">
+                                    <option value="today">Today</option>
+                                    <option value="yesterday">Yesterday</option>
+                                    <option value="week">Last 7 Days</option>
+                                    <option value="month">Last 30 Days</option>
+                                    <option value="custom">Custom Range</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-filter"></i> Apply Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert List -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Alert History</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-sync"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert-list">
+                            <!-- Alert 1 -->
+                            <div class="alert-item">
+                                <div class="alert-icon motion">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-title">Motion Detected</div>
+                                    <div class="alert-meta">
+                                        <div class="alert-time">
+                                            <i class="fas fa-clock"></i>
+                                            10:45 AM
+                                        </div>
+                                        <div class="alert-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Parking Lot
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn-icon acknowledge-alert" data-alert-id="1">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn-icon">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Alert 2 -->
+                            <div class="alert-item">
+                                <div class="alert-icon face">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-title">Unknown Person</div>
+                                    <div class="alert-meta">
+                                        <div class="alert-time">
+                                            <i class="fas fa-clock"></i>
+                                            10:30 AM
+                                        </div>
+                                        <div class="alert-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Front Gate
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn-icon acknowledge-alert" data-alert-id="2">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn-icon">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Alert 3 -->
+                            <div class="alert-item">
+                                <div class="alert-icon intrusion">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-title">Intrusion Alert</div>
+                                    <div class="alert-meta">
+                                        <div class="alert-time">
+                                            <i class="fas fa-clock"></i>
+                                            09:15 AM
+                                        </div>
+                                        <div class="alert-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Warehouse
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn-icon acknowledge-alert" data-alert-id="3">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn-icon">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Alert 4 -->
+                            <div class="alert-item acknowledged">
+                                <div class="alert-icon face">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-title">Face Recognition</div>
+                                    <div class="alert-meta">
+                                        <div class="alert-time">
+                                            <i class="fas fa-clock"></i>
+                                            09:00 AM
+                                        </div>
+                                        <div class="alert-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Lobby
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn-icon" disabled>
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn-icon">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Alert 5 -->
+                            <div class="alert-item acknowledged">
+                                <div class="alert-icon motion">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-title">Motion Detected</div>
+                                    <div class="alert-meta">
+                                        <div class="alert-time">
+                                            <i class="fas fa-clock"></i>
+                                            08:45 AM
+                                        </div>
+                                        <div class="alert-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Warehouse
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert-actions">
+                                    <button class="btn-icon" disabled>
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="btn-icon">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <div>
+                                Showing 1-5 of 24 alerts
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn btn-outline" disabled>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-primary">1</button>
+                                <button class="btn btn-outline">2</button>
+                                <button class="btn btn-outline">3</button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert Settings -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Notification Settings</h2>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h3 style="margin-bottom: 1rem; font-size: 1.125rem;">Alert Types</h3>
+                                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div>
+                                            <input type="checkbox" id="motion-alerts" checked>
+                                            <label for="motion-alerts">Motion Detection</label>
+                                        </div>
+                                        <select class="form-control" style="width: 120px;">
+                                            <option value="high">High</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div>
+                                            <input type="checkbox" id="face-alerts" checked>
+                                            <label for="face-alerts">Face Recognition</label>
+                                        </div>
+                                        <select class="form-control" style="width: 120px;">
+                                            <option value="high" selected>High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div>
+                                            <input type="checkbox" id="intrusion-alerts" checked>
+                                            <label for="intrusion-alerts">Intrusion Detection</label>
+                                        </div>
+                                        <select class="form-control" style="width: 120px;">
+                                            <option value="high" selected>High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div>
+                                            <input type="checkbox" id="object-alerts" checked>
+                                            <label for="object-alerts">Unattended Object</label>
+                                        </div>
+                                        <select class="form-control" style="width: 120px;">
+                                            <option value="high">High</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px;">
+                                <h3 style="margin-bottom: 1rem; font-size: 1.125rem;">Notification Methods</h3>
+                                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                    <div>
+                                        <input type="checkbox" id="in-app" checked>
+                                        <label for="in-app">In-App Notifications</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="email" checked>
+                                        <label for="email">Email Notifications</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="sms">
+                                        <label for="sms">SMS Notifications</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="sound" checked>
+                                        <label for="sound">Sound Alerts</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Surveillance Dashboard</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SecureView</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../monitoring/index.html" class="nav-link">
+                        <i class="fas fa-video"></i>
+                        <span>Live Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../alerts/index.html" class="nav-link">
+                        <i class="fas fa-bell"></i>
+                        <span>Alerts & Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../playback/index.html" class="nav-link">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Video Playback</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../reports/index.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports & Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../cameras/index.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Camera Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../users/index.html" class="nav-link active">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="toggle-sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>User Management</h2>
+                </div>
+                <div class="header-right">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <span>JD</span>
+                        </div>
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- User Overview -->
+                <div class="grid">
+                    <div class="col-span-3">
+                        <div class="card">
+                            <div class="stats-card">
+                                <div class="stats-icon primary">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stats-info">
+                                    <h3>125</h3>
+                                    <p>Total Users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="card">
+                            <div class="stats-card">
+                                <div class="stats-icon success">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="stats-info">
+                                    <h3>15</h3>
+                                    <p>Active Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="card">
+                            <div class="stats-card">
+                                <div class="stats-icon info">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="stats-info">
+                                    <h3>5</h3>
+                                    <p>Administrators</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="card">
+                            <div class="stats-card">
+                                <div class="stats-icon warning">
+                                    <i class="fas fa-user-clock"></i>
+                                </div>
+                                <div class="stats-info">
+                                    <h3>3</h3>
+                                    <p>Pending Approvals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Management Tools -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">User Management</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-user-plus"></i> Add User
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-download"></i> Export List
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="flex: 1; min-width: 200px;">
+                                <input type="text" class="form-control" placeholder="Search users...">
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <select class="form-control">
+                                    <option value="all">All Roles</option>
+                                    <option value="admin">Administrator</option>
+                                    <option value="supervisor">Supervisor</option>
+                                    <option value="operator">Operator</option>
+                                    <option value="viewer">Viewer</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <select class="form-control">
+                                    <option value="all">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="locked">Locked</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <th style="text-align: left; padding: 0.75rem;">Name</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Email</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Role</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Department</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Status</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Last Login</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">
+                                                <span>JD</span>
+                                            </div>
+                                            <span>John Doe</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">john.doe@example.com</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--primary-color); color: white; border-radius: 4px; font-size: 0.75rem;">Administrator</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">IT</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <span class="status-indicator online"></span> Active
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Just now</td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem; background-color: var(--info-color);">
+                                                <span>SJ</span>
+                                            </div>
+                                            <span>Sarah Johnson</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">sarah.j@example.com</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--info-color); color: white; border-radius: 4px; font-size: 0.75rem;">Supervisor</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Security</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <span class="status-indicator online"></span> Active
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">10 mins ago</td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem; background-color: var(--secondary-color);">
+                                                <span>MB</span>
+                                            </div>
+                                            <span>Michael Brown</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">m.brown@example.com</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--secondary-color); color: white; border-radius: 4px; font-size: 0.75rem;">Operator</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Operations</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <span class="status-indicator online"></span> Active
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">30 mins ago</td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem; background-color: var(--success-color);">
+                                                <span>ED</span>
+                                            </div>
+                                            <span>Emily Davis</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">emily.d@example.com</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--success-color); color: white; border-radius: 4px; font-size: 0.75rem;">Viewer</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">HR</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <span class="status-indicator offline"></span> Inactive
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">2 days ago</td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem; background-color: var(--warning-color);">
+                                                <span>RW</span>
+                                            </div>
+                                            <span>Robert Wilson</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">r.wilson@example.com</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--warning-color); color: white; border-radius: 4px; font-size: 0.75rem;">Pending</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Facilities</td>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <span class="status-indicator" style="background-color: var(--warning-color);"></span> Pending
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Never</td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- Pagination -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <div>
+                                Showing 1-5 of 125 users
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn btn-outline" disabled>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-primary">1</button>
+                                <button class="btn btn-outline">2</button>
+                                <button class="btn btn-outline">3</button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role Management -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Role Management</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add Role
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <th style="text-align: left; padding: 0.75rem;">Role Name</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Description</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Users</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Permissions</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--primary-color); color: white; border-radius: 4px; font-size: 0.75rem;">Administrator</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Full system access with all permissions</td>
+                                    <td style="padding: 0.75rem;">5</td>
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Edit</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Delete</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Manage Users</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Manage Roles</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">+5 more</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--info-color); color: white; border-radius: 4px; font-size: 0.75rem;">Supervisor</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Manage operators and view all cameras</td>
+                                    <td style="padding: 0.75rem;">12</td>
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Edit</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Manage Operators</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Export Reports</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">+3 more</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--secondary-color); color: white; border-radius: 4px; font-size: 0.75rem;">Operator</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">Monitor cameras and respond to alerts</td>
+                                    <td style="padding: 0.75rem;">45</td>
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Control Cameras</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Acknowledge Alerts</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">Export Recordings</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--success-color); color: white; border-radius: 4px; font-size: 0.75rem;">Viewer</span>
+                                    </td>
+                                    <td style="padding: 0.75rem;">View-only access to cameras and recordings</td>
+                                    <td style="padding: 0.75rem;">63</td>
+                                    <td style="padding: 0.75rem;">
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View Cameras</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View Recordings</span>
+                                            <span style="display: inline-block; padding: 0.125rem 0.375rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.75rem;">View Reports</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0.75rem;">
+                                        <button class="btn-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+</body>
+</html>

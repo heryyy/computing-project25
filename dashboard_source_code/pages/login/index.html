@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Surveillance Dashboard</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-shield-alt"></i> SecureView
+                </div>
+                <div class="login-subtitle">
+                    Surveillance System Dashboard
+                </div>
+            </div>
+            
+            <form class="login-form" action="../../index.html" method="GET">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <input type="checkbox" id="remember" class="form-check">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" style="color: var(--primary-color); text-decoration: none;">Forgot Password?</a>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+                
+                <div class="form-group" style="text-align: center; margin-top: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span>Or login with</span>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button type="button" class="btn btn-outline" style="flex: 1;">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline" style="flex: 1;">
+                            <i class="fab fa-microsoft"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline" style="flex: 1;">
+                            <i class="fab fa-apple"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                <p>&copy; 2025 SecureView Surveillance System. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('.login-form');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                
+                // In a real application, you would send these credentials to a server for authentication
+                // For this demo, we'll just redirect to the dashboard
+                if (username && password) {
+                    window.location.href = '../../index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
